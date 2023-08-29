@@ -1,0 +1,690 @@
+.Box {
+  width: 90% !important;
+  min-height: 600px !important ;
+  border: 1px solid black !important;
+}
+
+.openDrawer {
+  padding: 10px 20px;
+  color: white;
+  border: none;
+  background-color: goldenrod;
+}
+
+.CustomDrawerPaper {
+  width: 683px;
+  height: 768px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: -2px -1px 12px #0000000f;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.fullScreenPaper {
+  width: 100%;
+  height: 100%;
+}
+
+.input {
+  padding-bottom: 6px;
+  padding-top: 6px;
+  margin-left: 20px;
+  margin-top: 10px;
+  border: none;
+  height: 50px;
+  width: 499px;
+  height: 42px;
+  border-radius: 5px;
+  opacity: 1;
+  font-size: 24px;
+}
+
+.mainContainer {
+  width: 90%;
+  padding: 0px 20px;
+}
+
+.Assignee {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  width: 75%;
+  gap: 50px;
+  p {
+    font: var(--unnamed-font-style-normal) normal
+      var(--unnamed-font-weight-normal) 14px/16px
+      var(--unnamed-font-family-sf-pro-display);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    text-align: left;
+    font: normal normal normal 14px/16px SF Pro Display;
+    letter-spacing: 0px;
+    color: #8c8c8c;
+    opacity: 1;
+  }
+
+  .NoAssigneeSpan {
+    width: 102px;
+    height: 28px;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    border: 1px dashed #d8d8d8;
+    border-radius: 8px;
+    opacity: 1;
+
+    height: 14px;
+    font: var(--unnamed-font-style-normal) normal
+      var(--unnamed-font-weight-normal) 12px/14px
+      var(--unnamed-font-family-sf-pro-display);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    text-align: left;
+    font: normal normal normal 12px/14px SF Pro Display;
+    letter-spacing: 0px;
+    color: #8c8c8c;
+    opacity: 1;
+
+    .NoAssigneeAvatar {
+      width: 18px;
+      height: 18px;
+      opacity: 0.5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+.maindateContainer {
+  //  border: 1px solid red;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+
+  p {
+    height: 16px;
+    font: var(--unnamed-font-style-normal) normal
+      var(--unnamed-font-weight-normal) 14px/16px
+      var(--unnamed-font-family-sf-pro-display);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    text-align: left;
+    font: normal normal normal 14px/16px SF Pro Display;
+    letter-spacing: 0px;
+    color: #8c8c8c;
+    opacity: 1;
+  }
+
+  .boxdateContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 28px;
+    padding: 0 10px;
+
+    background: #ffffff 0% 0% no-repeat padding-box;
+    border: 1px dashed #d8d8d8;
+    border-radius: 8px;
+    opacity: 1;
+    cursor: pointer;
+
+    .DateAvatar {
+      width: 15px;
+      height: 12px;
+      background: #999999 0% 0% no-repeat padding-box;
+      opacity: 1;
+      font-size: 10px;
+    }
+
+    .boxparagraph {
+      height: 14px;
+      font: var(--unnamed-font-style-normal) normal
+        var(--unnamed-font-weight-normal) 12px/14px
+        var(--unnamed-font-family-sf-pro-display);
+      letter-spacing: var(--unnamed-character-spacing-0);
+      text-align: left;
+      font: normal normal normal 12px/14px SF Pro Display;
+      letter-spacing: 0px;
+      color: #8c8c8c;
+      opacity: 1;
+    }
+  }
+}
+
+.boxdateContainer:hover {
+  background-color: rgb(243, 239, 239);
+}
+
+.projectContainer {
+  display: flex;
+  margin-top: 10px;
+  gap: 65px;
+  width: 365px;
+  height: 28px;
+  opacity: 1;
+  align-items: center;
+
+  p {
+    width: 47px;
+    height: 16px;
+    font: var(--unnamed-font-style-normal) normal
+      var(--unnamed-font-weight-normal) 14px/16px
+      var(--unnamed-font-family-sf-pro-display);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    text-align: left;
+    font: normal normal normal 14px/16px SF Pro Display;
+    letter-spacing: 0px;
+    color: #8c8c8c;
+    opacity: 1;
+  }
+
+  .projectBox {
+    width: 230px;
+    width: fit-content;
+    // border: 1px solid red;
+    height: 28px;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    border: 1px solid #d8d8d8;
+    border-radius: 8px;
+    opacity: 1;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 0 10px;
+  }
+
+  .projectBoxContainer {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 5px;
+    div {
+      width: 9px;
+      height: 9px;
+      background: #6c6c6c 0% 0% no-repeat padding-box;
+      border-radius: 2px;
+      opacity: 1;
+    }
+
+    .projectSelect {
+      width: 79px;
+      height: 14px;
+      font: var(--unnamed-font-style-normal) normal
+        var(--unnamed-font-weight-normal) 12px/14px
+        var(--unnamed-font-family-sf-pro-display);
+      letter-spacing: var(--unnamed-character-spacing-0);
+      text-align: left;
+      font: normal normal normal 12px/14px SF Pro Display;
+      letter-spacing: 0px;
+      color: #666666;
+      opacity: 1;
+    }
+
+    .closeIcon {
+      margin-left: -20px !important;
+      cursor: pointer;
+    }
+  }
+}
+
+.select-paper-class {
+  width: 170px !important;
+  padding-left: 10px !important;
+}
+
+.SelectTagBox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  .closeIcon {
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+}
+
+.person-name-select {
+  .MuiOutlinedInput-notchedOutline {
+    border-color: transparent;
+  }
+}
+
+.parentTask {
+  height: 28px;
+
+  margin-top: 20px;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+
+  P {
+    height: 16px;
+    font: var(--unnamed-font-style-normal) normal
+      var(--unnamed-font-weight-normal) 14px/16px
+      var(--unnamed-font-family-sf-pro-display);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    text-align: left;
+    font: normal normal normal 14px/16px SF Pro Display;
+    letter-spacing: 0px;
+    color: #8c8c8c;
+    opacity: 1;
+  }
+
+  .AutofillAddPriority {
+    width: 68px;
+    height: 28px;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    border-radius: 8px;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    padding-left: 1px;
+
+    p {
+      height: 14px;
+      font: var(--unnamed-font-style-normal) normal
+        var(--unnamed-font-weight-normal) 12px/14px
+        var(--unnamed-font-family-sf-pro-display);
+      letter-spacing: var(--unnamed-character-spacing-0);
+      text-align: left;
+      font: normal normal normal 12px/14px SF Pro Display;
+      letter-spacing: 0px;
+      color: #8c8c8c;
+      opacity: 1;
+      cursor: pointer;
+    }
+
+    div {
+      margin-left: 27px;
+    }
+  }
+
+  .AutofillAddPriority:hover {
+    background-color: rgb(243, 241, 241);
+  }
+}
+
+.AddtagsPara {
+  width: 105px;
+  height: 28px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border-radius: 8px;
+  opacity: 1;
+  width: 47px;
+  height: 14px;
+  font: var(--unnamed-font-style-normal) normal
+    var(--unnamed-font-weight-normal) 12px/14px
+    var(--unnamed-font-family-sf-pro-display);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  text-align: left;
+  font: normal normal normal 12px/14px SF Pro Display;
+  letter-spacing: 0px;
+  color: #8c8c8c;
+  opacity: 1;
+  padding: 10px 10px;
+  cursor: pointer;
+}
+
+.AddtagsPara:hover {
+  background-color: rgb(228, 227, 227);
+}
+
+.PriorityContainer {
+
+  margin-top: 10px;
+  width: 231px;
+  height: 28px;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  gap: 70px;
+  p {
+    width: 41px;
+    height: 16px;
+    font: var(--unnamed-font-style-normal) normal
+      var(--unnamed-font-weight-normal) 14px/16px
+      var(--unnamed-font-family-sf-pro-display);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    text-align: left;
+    font: normal normal normal 14px/16px SF Pro Display;
+    letter-spacing: 0px;
+    color: #8c8c8c;
+    opacity: 1;
+  }
+}
+
+.selectPriority {
+  font: var(--unnamed-font-style-normal) normal
+    var(--unnamed-font-weight-normal) 12px/14px
+    var(--unnamed-font-family-sf-pro-display);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  text-align: left;
+  font: normal normal normal 12px/14px SF Pro Display;
+  letter-spacing: 0px;
+  color: #8c8c8c;
+  opacity: 1;
+}
+
+.dependenciesContainer {
+  display: flex;
+  align-items: center;
+
+  margin-top: 10px;
+  p {
+    width: 75px;
+    height: 16px;
+    font: var(--unnamed-font-style-normal) normal
+      var(--unnamed-font-weight-normal) 14px/16px
+      var(--unnamed-font-family-sf-pro-display);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    text-align: left;
+    font: normal normal normal 14px/16px SF Pro Display;
+    letter-spacing: 0px;
+    color: #8c8c8c;
+    opacity: 1;
+  }
+
+  .dependenciesSpan {
+    // width: 111px;
+    height: 14px;
+
+    font: var(--unnamed-font-style-normal) normal
+      var(--unnamed-font-weight-normal) 12px/14px
+      var(--unnamed-font-family-sf-pro-display);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    text-align: left;
+    font: normal normal normal 12px/14px SF Pro Display;
+    letter-spacing: 0px;
+    color: #8c8c8c;
+    opacity: 1;
+  }
+}
+
+.TagsContainer {
+  // border: 1px solid red;
+  display: flex;
+  align-items: center;
+  gap: 90px;
+  margin-top: 10px;
+  // min-height: fit-content;
+  height: auto;
+
+  p {
+    width: 28px;
+    // min-height: 16px;
+    font: var(--unnamed-font-style-normal) normal
+      var(--unnamed-font-weight-normal) 14px/16px
+      var(--unnamed-font-family-sf-pro-display);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    text-align: left;
+    font: normal normal normal 14px/16px SF Pro Display;
+    letter-spacing: 0px;
+    color: #8c8c8c;
+    opacity: 1;
+  }
+
+  div {
+    min-height: 28px;
+
+    font: var(--unnamed-font-style-normal) normal
+      var(--unnamed-font-weight-normal) 12px/14px
+      var(--unnamed-font-family-sf-pro-display);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    text-align: left;
+    font: normal normal normal 12px/14px SF Pro Display;
+    letter-spacing: 0px;
+    color: #8c8c8c;
+    opacity: 1;
+  }
+}
+
+.mark-Container {
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.inviteLink {
+  color: rgb(0, 153, 255);
+
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  padding: 5px 10px;
+}
+
+.inputEmail {
+  .MuiOutlinedInput-notchedOutline {
+    border-color: transparent !important;
+    cursor: pointer;
+  }
+}
+
+.emailoption {
+  width: fit-content;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.emailoption {
+  span {
+    font-size: 18px !important;
+    color: rgb(190, 187, 187) !important;
+  }
+}
+
+.datePopover {
+  left: 1300px !important;
+  top: -340px !important;
+}
+
+.projectSpan {
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.projectSpan:hover {
+  background-color: rgb(245, 244, 244);
+}
+
+.AddprojectButton {
+  margin-left: 150px;
+  color: #3f6ac4;
+  letter-spacing: 0.5;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 20px 10px;
+  display: block;
+  margin-top: -10px;
+  width: 71%;
+}
+
+.dependenciesSpan {
+  display: inline-block;
+  margin-left: 35px;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.dependenciesSpan:hover {
+  background-color: rgb(247, 246, 246);
+}
+
+.inputdependenciesBox {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+}
+
+.inputdependenciesBox {
+  margin-left: 40px;
+}
+
+.inputdependenciesBox {
+  input {
+    width: 60%;
+    height: 30px;
+    outline-color: #3f6ac4;
+  }
+}
+
+.discriptionBox {
+  padding-left: 20px;
+
+  p {
+    width: 67px;
+    font: var(--unnamed-font-style-normal) normal
+      var(--unnamed-font-weight-normal) 14px/16px
+      var(--unnamed-font-family-sf-pro-display);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    text-align: left;
+    font: normal normal normal 14px/16px SF Pro Display;
+    letter-spacing: 0px;
+    color: #8c8c8c;
+    opacity: 1;
+  }
+  div {
+    width: 623px;
+    height: 96px;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    border: 1px solid #ebebeb;
+    border-radius: 8px;
+    opacity: 1;
+    padding-left: 10px;
+    padding-top: 10px;
+    font-size: 12px;
+    color: #8c8c8c;
+  }
+}
+
+.subtaskDiv {
+  padding-left: 20px;
+  margin-top: 20px;
+  p {
+    width: 54px;
+    height: 16px;
+    font: var(--unnamed-font-style-normal) normal
+      var(--unnamed-font-weight-normal) 14px/16px
+      var(--unnamed-font-family-sf-pro-display);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    text-align: left;
+    font: normal normal normal 14px/16px SF Pro Display;
+    letter-spacing: 0px;
+    color: #8c8c8c;
+    opacity: 1;
+  }
+
+  button {
+    width: 113px;
+    height: 28px;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    box-shadow: 0px 2px 8px #0000000a;
+    border: 1px solid #d8d8d8;
+    border-radius: 5px;
+    opacity: 1;
+    font: var(--unnamed-font-style-normal) normal
+      var(--unnamed-font-weight-normal) 12px/14px
+      var(--unnamed-font-family-sf-pro-display);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    text-align: left;
+    font: normal normal normal 12px/14px SF Pro Display;
+    letter-spacing: 0px;
+    color: #262626;
+    opacity: 1;
+  }
+}
+
+.commentBox {
+  padding-left: 20px;
+  height: 66px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px -2px 20px #00000029;
+  border: 1px solid #ebebeb;
+  opacity: 1;
+  margin-top: 10px;
+  margin-top: 20px;
+}
+
+.commentAvatar {
+  width: 28px !important;
+  height: 28px !important;
+  opacity: 1 !important;
+  font-size: 12px !important;
+}
+
+.inputComment {
+  padding-top: 10px;
+  /* border: 1px solid red; */
+}
+
+.textAreaBox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  textarea {
+    width: 597px;
+    height: 42px;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    border: 1px solid #c5c5c5;
+    border-radius: 8px;
+    opacity: 1;
+  }
+}
+
+.inputComment {
+  button {
+    margin-left: 40px;
+
+    margin-bottom: 20px;
+  }
+}
+
+.comment_outer {
+  p {
+    margin-left: 50px;
+    margin-top: 0;
+  }
+}
+
+.comment_inner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.NoAssigneeSpan {
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.NoAssigneeSpan:hover {
+  background-color: rgb(238, 233, 233);
+}
+
+.likeSpan {
+  cursor: pointer;
+}
+
+.DropDown {
+  background-color: none;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  color: rgb(0, 110, 255);
+}
+
+.DropDown:hover {
+  background-color: rgb(243, 237, 237);
+}
+
+.AddCommentButton {
+  margin-top: 20px;
+}

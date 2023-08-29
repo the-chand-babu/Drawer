@@ -2,10 +2,10 @@ import { MenuItem, Menu } from "@mui/material";
 import "./AddmoreMenu.css";
 
 const AddMoreMenu = ({ open, setOpen, data }) => {
-  console.log("this is addmore open", open);
+
   return (
     <Menu
-      sx={{ top: "45px", left: "0px" }}
+      sx={{ top: "37px", left: "0px" }}
       id="demo-positioned-menu"
       aria-labelledby="demo-positioned-button"
       open={open}

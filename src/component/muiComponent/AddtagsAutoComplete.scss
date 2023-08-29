@@ -1,0 +1,32 @@
+#addtagsAuto {
+  min-width: 235px;
+  max-width: 500px;
+  padding: 0;
+  padding-right: 50px;
+  .MuiInputBase-root {
+    min-height: 28px !important;
+    border-radius: 8px;
+    opacity: 1;
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .MuiAutocomplete-input {
+    padding: 0px 0px 0px 5px !important;
+    font-size: 12px;
+    font: var(--unnamed-font-style-normal) normal
+      var(--unnamed-font-weight-normal) 12px/14px
+      var(--unnamed-font-family-sf-pro-display);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    text-align: left;
+    font: normal normal normal 12px/14px SF Pro Display;
+    letter-spacing: 0px;
+    color: #8c8c8c;
+    opacity: 1;
+  }
+
+  .MuiOutlinedInput-root {
+    padding: 1px !important;
+  }
+}

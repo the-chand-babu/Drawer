@@ -13,7 +13,8 @@ export default function DateRangeCalendar() {
   ]);
 
   const handleFocusChange = (ranges: any) => {
-    console.log(ranges);
+
+    
     setDateRange([ranges.selection]);
   };
 

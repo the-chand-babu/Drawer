@@ -5,11 +5,13 @@ import { MenuItem, Menu } from "@mui/material";
 const MenuFunc = ({ menuOpen, setMenuOpen , data, id}) => {
   return (
     <Menu
-    sx={{top:'45px', left:'-100px' } }
+    sx={{top:'37px', left:'-20px' } }
     id="demo-positioned-menu"
     aria-labelledby="demo-positioned-button"
     // anchorEl={anchorEl}
     open={menuOpen}
+
+    
     // onClose={() => setMenuOpen(false)}
     anchorOrigin={{
       vertical: 'top',

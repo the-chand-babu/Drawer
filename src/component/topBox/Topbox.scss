@@ -1,0 +1,102 @@
+.topbox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 128px 0 28px 24px; */
+  box-sizing: border-box;
+  height: 56px;
+  opacity: 1;
+  padding: 0 10px;
+
+}
+
+.topbox {
+  border-bottom: 1px solid rgb(182, 179, 179);
+  .leftContainer {
+    width: 142px;
+    height: 36px;
+    margin-left: 10px;
+
+    background: #ffffff 0% 0% no-repeat padding-box;
+    box-shadow: 0px 2px 8px #3232470f;
+    border-radius: 8px;
+    opacity: 1;
+    .person-name-select {
+      width: 142px;
+      min-width: 142px;
+      max-width: 142px;
+      margin-top: 5px;
+
+      letter-spacing: var(--unnamed-character-spacing-0);
+      text-align: center;
+      font: normal normal normal 12px/17px SF Pro Display;
+      letter-spacing: 0px;
+      color: #3aa2a0;
+      text-transform: uppercase;
+      opacity: 1;
+    }
+
+    .MuiSelect-select {
+      padding: 7px 5px;
+    }
+  }
+}
+
+.rightContainer {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.rightContainer {
+  // border: 1px solid red;
+  width: 30%;
+
+  span {
+    font-size: 20px !important;
+    font-weight: 400 !important;
+    display: flex;
+    align-items: center;
+    color: rgb(99, 98, 98);
+    font-family: 700;
+    cursor: pointer;
+  }
+}
+
+.topbox div {
+  button {
+    background-color: #e6f8f1;
+    /* border-color: #8dc2ac; */
+    fill: #58a182;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 10px;
+    border: 0.7px solid #8dc2ac;
+  }
+}
+
+.select-paper-class {
+  width: 196px;
+  height: 182px;
+  margin-left: 35px;
+  margin-top: 5px;
+
+  .MuiList-root {
+    width: 75px;
+    height: 14px;
+    /* UI Properties */
+    font: var(--unnamed-font-style-normal) normal
+      var(--unnamed-font-weight-normal) 12px / var(--unnamed-line-spacing-17)
+      var(--unnamed-font-family-sf-pro-display);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    text-align: left;
+    font: normal normal normal 12px/17px SF Pro Display;
+    letter-spacing: 0px;
+    // color: #54689c;
+    text-transform: uppercase;
+    opacity: 1;
+  }
+}
+

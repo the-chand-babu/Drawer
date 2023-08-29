@@ -1,13 +1,16 @@
 .autocompelet {
 
-  .Mui-focused .MuiOutlinedInput-notchedOutline {
+  .Mui-focused
+  { .MuiOutlinedInput-notchedOutline {
 
     margin-left: 100px !important;
 
   }
+}
 
   .MuiOutlinedInput-notchedOutline {
             margin-left: 100px !important;
+            
   }
 
 
@@ -15,7 +18,7 @@
 
 
 .boxes{
-    /* background-color: lightgrey; */
+ 
     cursor: pointer;
 }
 

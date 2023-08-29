@@ -6,7 +6,7 @@ import PersonIcon from "@mui/icons-material/Person"; // Import the desired icon
 import InputAdornment from "@mui/material/InputAdornment";
 
 
-import "./EmailInput.css";
+import "./EmailInput.scss";
 
 const EmailInputWithDropdown = ({ email, setEmail, emailOptions , setOpenAssignee}) => {
   const handleEmailChange = (_, newValue) => {
@@ -38,7 +38,7 @@ const EmailInputWithDropdown = ({ email, setEmail, emailOptions , setOpenAssigne
 
 
   const renderOption = (option  ) => {
-    console.log(option);
+
     const fullName = option.key.split("@")[0];
     const firstName = fullName.split(".")[0];
     const lastName = fullName?.split(".")[1];
@@ -47,7 +47,7 @@ const EmailInputWithDropdown = ({ email, setEmail, emailOptions , setOpenAssigne
       firstName[0] + (lastName !== undefined ? " " + lastName[0] : "");
 
     const newUpperCase = initial.toUpperCase();
-    console.log("this is new UpperCase", newUpperCase);
+
     const newFullName =
       firstName + " " + (lastName !== undefined ? lastName : "");
 
@@ -92,7 +92,7 @@ const EmailInputWithDropdown = ({ email, setEmail, emailOptions , setOpenAssigne
     <Autocomplete
       className="autocomplete"
       freeSolo
-      sx={{ width: "100%", height: "36px", padding: "0px" }}
+      sx={{ width: "100%", height: "36px", padding: "0px",  }}
       options={emailOptions}
       inputValue={email}
       onInputChange={handleEmailChange}
@@ -110,7 +110,9 @@ const EmailInputWithDropdown = ({ email, setEmail, emailOptions , setOpenAssigne
             style: {
               height: "100%",
               padding: "0px",
-              outline: "none" // Remove the outline
+              outline: "none", // Remove the outline
+              // border:'1px solid red'
+              width: '465px',
             },
             startAdornment: (
               <InputAdornment position="start">

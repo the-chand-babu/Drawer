@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 import DrawerComponent from "./component/Drawer";
 
 function App() {
