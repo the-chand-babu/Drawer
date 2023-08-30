@@ -1,6 +1,6 @@
 import { Box, ClickAwayListener, Drawer } from "@mui/material";
 import "./Drawer.scss";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import { IoIosArrowDropdown } from "react-icons/io";
 import {
@@ -128,7 +128,11 @@ const DrawerComponent = () => {
   const [projecrSelectOpen, setProjecrSelectOpen] = useState(false);
   const [priorityInputOpen, setPriorityInputOpen] = useState(false);
   const [prioritySelectOption, setPrioritySelectOption] = useState("");
-
+  const [priorityState, setPriorityState] = useState("");
+  const descriptionBoxRef = useRef<HTMLDivElement | null>(null);
+  const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(
+    null
+  );
   const handleClick = (toggel: boolean) => {
     if (toggel == false) {
       setOpen(false);
@@ -149,8 +153,9 @@ const DrawerComponent = () => {
     setShowmoreBtn(!showMoreBtn);
   };
 
-  const handleDatepopover = () => {
-    setDatePopOver(!DatePopOver);
+  const handleDatepopover = (event: React.MouseEvent<HTMLDivElement>) => {
+    // setDatePopOver(!DatePopOver);
+    // setAnchorEl(event.currentTarget);
   };
 
   const handleProjectOpen = () => {
@@ -227,6 +232,23 @@ const DrawerComponent = () => {
   const handleProjectDropOPen = () => {
     setProjecrSelectOpen(!projecrSelectOpen);
   };
+
+  const handleClickOutside = (event: MouseEvent) => {
+    if (
+      descriptionBoxRef.current instanceof HTMLElement &&
+      !descriptionBoxRef.current.contains(event.target as Node)
+    ) {
+      setOpenDiscription(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <Box className="Box">
@@ -321,7 +343,11 @@ const DrawerComponent = () => {
           <div className="maindateContainer">
             <p>Due date</p>
 
-            <div className="boxdateContainer" onClick={handleDatepopover}>
+            <div
+              className="boxdateContainer"
+              aria-describedby="datePopOver"
+              onClick={handleDatepopover}
+            >
               <Avatar className="DateAvatar">
                 <CiCalendarDate />
               </Avatar>
@@ -329,21 +355,20 @@ const DrawerComponent = () => {
               <p className="boxparagraph">
                 {DatePopOver ? "Select Date" : "No due date"}
               </p>
-            </div>
 
-            <Popover
-              open={DatePopOver}
-              onClose={() => setDatePopOver(false)}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              className="datePopover"
-            >
-              <Typography>
-                <DateRangeCalendar />
-              </Typography>
-            </Popover>
+              <Popover
+                anchorOrigin={{
+                  vertical: "bottom",
+                  horizontal: "left",
+                }}
+                anchorEl={anchorEl}
+                id="datePopOver"
+                // className="datePopOver"
+                open={DatePopOver}
+              >
+                this is popOver
+              </Popover>
+            </div>
           </div>
 
           <div className="projectContainer" onClick={handleProjectOpen}>
@@ -396,7 +421,7 @@ const DrawerComponent = () => {
             <p>Parent task</p>
             <div className="AutofillAddPriority">
               {priorityInputOpen ? (
-                <ComboBox />
+                <ComboBox setPriorityState={setPriorityState} />
               ) : (
                 <p onClick={() => setPriorityInputOpen(true)}>Add Priority</p>
               )}
@@ -491,11 +516,11 @@ const DrawerComponent = () => {
 
         {/* /// disCriptionBox content....... */}
 
-        <div className="discriptionBox">
+        <div className="discriptionBox" ref={descriptionBoxRef}>
           <p>Description</p>
 
           {openDiscription ? (
-            "the component"
+            <div>the component</div>
           ) : (
             <div
               onChange={handleDiscription}

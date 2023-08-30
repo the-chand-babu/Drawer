@@ -13,7 +13,21 @@ const top100Films = [
   { label: "Pulp Fiction", year: 1994 },
 ];
 
-export default function ComboBox() {
+export default function ComboBox({ setPriorityState }) {
+  const priorityHandleChange = (a, b, c) => {
+    console.log("a", a);
+    console.log("b", b);
+    console.log("c", c);
+
+    if (c == "selectOption") {
+      setPriorityState(b.label);
+    }
+
+    if (c == "clear") {
+      setPriorityState("");
+    }
+  };
+
   return (
     <div>
       <Autocomplete
@@ -21,6 +35,7 @@ export default function ComboBox() {
         sx={{ height: "30px !important", width: "235px" }}
         disablePortal
         id="combo-box-demo"
+        onChange={priorityHandleChange}
         options={top100Films}
         renderInput={(params) => <TextField {...params} />}
       />
