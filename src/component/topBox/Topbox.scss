@@ -2,19 +2,19 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* padding: 128px 0 28px 24px; */
+
   box-sizing: border-box;
   height: 56px;
   opacity: 1;
   padding: 0 10px;
-
+  
 }
 
 .topbox {
   border-bottom: 1px solid rgb(182, 179, 179);
   .leftContainer {
-    width: 142px;
-    height: 36px;
+    width: 192px;
+    height: 46px;
     margin-left: 10px;
 
     background: #ffffff 0% 0% no-repeat padding-box;
@@ -22,11 +22,10 @@
     border-radius: 8px;
     opacity: 1;
     .person-name-select {
-      width: 142px;
-      min-width: 142px;
-      max-width: 142px;
+      width: 192px;
+      min-width: 192px;
+      max-width: 192px;
       margin-top: 5px;
-
       letter-spacing: var(--unnamed-character-spacing-0);
       text-align: center;
       font: normal normal normal 12px/17px SF Pro Display;
@@ -38,6 +37,13 @@
 
     .MuiSelect-select {
       padding: 7px 5px;
+    }
+
+    .Mui-focused {
+      .Mui-notched {
+        border-color: transparent;
+        background-color: transparent;
+      }
     }
   }
 }
@@ -68,7 +74,7 @@
 .topbox div {
   button {
     background-color: #e6f8f1;
-    /* border-color: #8dc2ac; */
+     border-color: #8dc2ac; 
     fill: #58a182;
     padding: 10px;
     font-size: 14px;
@@ -78,14 +84,15 @@
 }
 
 .select-paper-class {
-  width: 196px;
-  height: 182px;
+  width: 200px;
+  height: 230px;
   margin-left: 35px;
   margin-top: 5px;
+  padding-right: 10px;
 
   .MuiList-root {
-    width: 75px;
-    height: 14px;
+    // width: 75px;
+    // height: 14px;
     /* UI Properties */
     font: var(--unnamed-font-style-normal) normal
       var(--unnamed-font-weight-normal) 12px / var(--unnamed-line-spacing-17)
@@ -94,9 +101,8 @@
     text-align: left;
     font: normal normal normal 12px/17px SF Pro Display;
     letter-spacing: 0px;
-    // color: #54689c;
+    color: #54689c;
     text-transform: uppercase;
     opacity: 1;
   }
 }
-

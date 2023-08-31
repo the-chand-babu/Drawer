@@ -1,8 +1,7 @@
-import { Box, ClickAwayListener, Drawer } from "@mui/material";
+import { Box, Button, ClickAwayListener, Drawer } from "@mui/material";
 import "./Drawer.scss";
 import React, { useEffect, useRef, useState } from "react";
 
-import { IoIosArrowDropdown } from "react-icons/io";
 import {
   Avatar,
   FormControl,
@@ -18,13 +17,11 @@ import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
 import { GrFormClose } from "react-icons/gr";
 import { Popover } from "@mui/material";
-import { Typography } from "@mui/material";
 import Topbox from "./topBox/Topbox";
 import ComboBox from "./muiComponent/ParentTaskAutofill";
 import DependenciesAuto from "./muiComponent/DependenciesAutofill";
 import AddTagsAuto from "./muiComponent/AddTagsAutoComplete";
 import { AiOutlineClose } from "react-icons/ai";
-import { PiFlagLight } from "react-icons/pi";
 import { HiFlag } from "react-icons/hi2";
 
 interface inputChange {
@@ -37,11 +34,6 @@ const emailOptions = [
   "user123@gmail.com",
   "testuser@yahoo.com",
   "other@example.com", // Add more email options here
-];
-
-const Blockingdata = [
-  { id: 1, name: "Blocked by", color: "yellow", icons: <FcApproval /> },
-  { id: 2, name: "Blocked", color: "red", icons: <FcApproval /> },
 ];
 
 const checkDependenciesAutoComplete = [
@@ -81,25 +73,6 @@ const pritySelectArr = [
   },
 ];
 
-// const statusArr = [
-//   {
-//     id: 1,
-//     color: "#36b8b1",
-//     content: " On Track",
-//   },
-//   {
-//     id: 2,
-//     color: "#d84f67",
-//     content: "Off Track",
-//   },
-
-//   {
-//     id: 3,
-//     color: "#f1bd6c",
-//     content: "At Risk",
-//   },
-// ];
-
 let commentId = 1;
 
 const DrawerComponent = () => {
@@ -110,7 +83,7 @@ const DrawerComponent = () => {
 
   const [openAssignee, setOpenAssignee] = useState(false);
   const [email, setEmail] = useState("");
-  const [DatePopOver, setDatePopOver] = useState(false);
+
   const [projectOpen, setprojectOpen] = useState(false);
   const [addProject, setAddproject] = useState("");
   const [openDepedencies, setOpenDepedencies] = useState(false);
@@ -149,35 +122,21 @@ const DrawerComponent = () => {
     setInputValue(value);
   };
 
-  const handleShowMoreButton = () => {
-    setShowmoreBtn(!showMoreBtn);
+  const handleDatepopover = (event: React.MouseEvent<HTMLButtonElement>) => {
+    // setDatePopOver(!DatePopOver);
+    setAnchorEl(event.currentTarget);
   };
 
-  const handleDatepopover = (event: React.MouseEvent<HTMLDivElement>) => {
-    // setDatePopOver(!DatePopOver);
-    // setAnchorEl(event.currentTarget);
+  const handleDatePopOverClose = () => {
+    setAnchorEl(null);
   };
 
   const handleProjectOpen = () => {
     setprojectOpen(true);
   };
 
-  const handleAddProject = (e: any) => {
-    setAddproject(e.target.value);
-  };
-
   const handleAddDependencies = () => {
     setOpenDepedencies(true);
-  };
-
-  const handleDepencies = (e: any) => {
-    setDependenciesInputValue(e.target.value);
-
-    const newData = checkDependenciesAutoComplete.filter((item) =>
-      item.content.includes(e.target.value)
-    );
-
-    setDependenciesArr(newData);
   };
 
   const handleComment = (e: any) => {
@@ -215,6 +174,7 @@ const DrawerComponent = () => {
     setPrioritySelectOption(e.target.value);
   };
 
+  const openDatePop = Boolean(anchorEl);
   const handleDiscriptionOpen = () => {};
 
   const splitFullName = email.split("@")[0];
@@ -294,31 +254,28 @@ const DrawerComponent = () => {
               <div className="emailoption">
                 <TextField
                   className="inputEmail"
-                  sx={{ border: "none", outline: "none" }}
+                  // sx={{ border: "none", outline: "none" }}
+
                   disabled
                   InputProps={{
                     startAdornment: (
                       <InputAdornment position="start">
-                        <Avatar
-                          sx={{
-                            width: "40px",
-                            hieght: "10px",
-                            borderRadius: "50%",
-                            background: "red",
-                            fontSize: "15px",
-                          }}
-                        >
-                          {" "}
-                          {upperCaseInitial}
-                        </Avatar>
+                        <div className="assigneeInputDesignBox">
+                          <Avatar className="AssigneeAvatar">
+                            {upperCaseInitial}
+                          </Avatar>
+                          <p>{email}</p>
+
+                          <GrFormClose
+                            className="closeBtn"
+                            onClick={() => setEmail("")}
+                          />
+                        </div>
                       </InputAdornment>
                     ),
                   }}
-                  defaultValue={email}
+                  // defaultValue={email}
                 />
-                <span onClick={() => setEmail("")}>
-                  <GrFormClose />
-                </span>
               </div>
             ) : (
               <span
@@ -343,7 +300,7 @@ const DrawerComponent = () => {
           <div className="maindateContainer">
             <p>Due date</p>
 
-            <div
+            <Button
               className="boxdateContainer"
               aria-describedby="datePopOver"
               onClick={handleDatepopover}
@@ -353,22 +310,23 @@ const DrawerComponent = () => {
               </Avatar>
 
               <p className="boxparagraph">
-                {DatePopOver ? "Select Date" : "No due date"}
+                {openDatePop ? "Select Date" : "No due date"}
               </p>
+            </Button>
 
-              <Popover
-                anchorOrigin={{
-                  vertical: "bottom",
-                  horizontal: "left",
-                }}
-                anchorEl={anchorEl}
-                id="datePopOver"
-                // className="datePopOver"
-                open={DatePopOver}
-              >
-                this is popOver
-              </Popover>
-            </div>
+            <Popover
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "left",
+              }}
+              onClose={handleDatePopOverClose}
+              anchorEl={anchorEl}
+              id="datePopOver"
+              // className="datePopOver"
+              open={openDatePop}
+            >
+              <DateRangeCalendar />
+            </Popover>
           </div>
 
           <div className="projectContainer" onClick={handleProjectOpen}>
@@ -419,7 +377,10 @@ const DrawerComponent = () => {
 
           <div className="parentTask">
             <p>Parent task</p>
-            <div className="AutofillAddPriority">
+            <div
+            
+              className="AutofillAddPriority"
+            >
               {priorityInputOpen ? (
                 <ComboBox setPriorityState={setPriorityState} />
               ) : (

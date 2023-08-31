@@ -185,7 +185,7 @@ function Topbox({ fullScreen, setFullScreen, handleClick }: topBoxProps) {
       name: "Not Started",
       id: "1",
       bgColor: "rgba(84, 104, 154, 0.15)",
-      color: 'rgba(84, 104, 156, 1)',
+      color: "rgba(84, 104, 156, 1)",
     },
     {
       name: "IN PROGRESS",
@@ -220,8 +220,6 @@ function Topbox({ fullScreen, setFullScreen, handleClick }: topBoxProps) {
     setPersonName(value);
   };
 
-
-
   const handleLike = () => {
     setLike(!like);
   };
@@ -251,7 +249,6 @@ function Topbox({ fullScreen, setFullScreen, handleClick }: topBoxProps) {
             value={personName ? personName : "Not Started"}
             onChange={handleChange}
             input={<OutlinedInput />}
-        
             MenuProps={{ classes: { paper: "select-paper-class" } }}
           >
             {taskStatus.map(({ name, id, bgColor, color }: TaskStatusProps) => (
@@ -268,14 +265,14 @@ function Topbox({ fullScreen, setFullScreen, handleClick }: topBoxProps) {
                   ></div>{" "}
                   <div
                     style={{
-                      padding: "0px 13px",
+                      padding: "5px 13px",
                       background: bgColor,
                       borderRadius: "17px",
-                      color:color,
-                    
+                      color: color,
+                      fontSize: "20px",
                     }}
                   >
-                {name}
+                    {name}
                   </div>
                 </div>
               </MenuItem>
